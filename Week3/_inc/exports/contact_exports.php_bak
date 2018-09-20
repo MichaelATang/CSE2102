@@ -1,0 +1,65 @@
+
+                <h3 class="GxNoPrint">Export all <?php if (isset($_GET['technicians'])) echo "Technicians"; else echo "Contacts"; ?> to Excel | <a href="<?php if (isset($_GET['technicians'])) echo "?technicians=yes"; else echo "?contacts=yes"; ?>">Cancel</a></h3><br />  
+                <div class="table-responsive" id="employee_table">  
+                        <?php if (isset($_GET['technicians'])) $results = getAllTechnicianContacts(); else $results = getAllContacts(); ?>
+<table class="table table-bordered">
+   <tr>
+   <th scope="col">Title</th>
+    <th scope="col">First Name</th>
+    <th scope="col">Last Name</th>
+    <th scope="col">Organisation</th>
+    <th scope="col">Job Title</th>
+    <th scope="col">Importer</th>
+    <th scope="col">Street</th>
+    <th scope="col">Village</th>
+    <th scope="col">Province</th>
+    <th scope="col">Region</th>
+    <th scope="col">eMail</th>
+    <th scope="col">Office Phone</th>
+    <th scope="col">Home Phone</th>
+    <th scope="col">Mobile Phone</th>
+    <th scope="col">Contact Type</th>
+  </tr>
+ <?php 
+foreach($results as $row){
+	?>
+		<tr>
+    <td><?php echo $row['title']; ?></td>
+    <td><?php echo $row['fname']; ?></td>
+    <td><?php echo $row['lname']; ?></td>
+    <td><?php echo $row['organisation']; ?></td>
+    <td><?php echo $row['job_title']; ?></td>
+    <td><?php echo $row['importer']; ?></td>
+    <td><?php echo $row['street']; ?></td>
+    <td><?php echo $row['village']; ?></td>
+    <td><?php echo $row['province']; ?></td>
+    <td><?php echo $row['region']; ?></td>
+    <td><?php echo $row['email']; ?></td>
+    <td><?php echo $row['office_phone']; ?></td>
+    <td><?php echo $row['home_phone']; ?></td>
+    <td><?php echo $row['mobile_phone']; ?></td>
+    <td><?php echo $row['type']; ?></td>
+  </tr>
+<?php        
+}
+?>
+</table>
+
+                </div>  
+                <div align="center">  
+                     <button name="create_excel" id="create_excel" class="btn btn-success">Create Excel File</button>  
+                </div>  
+           </div>  
+           <br />  
+   
+
+
+<script>  
+ $(document).ready(function(){  
+      $('#create_excel').click(function(){  
+           var excel_data = $('#employee_table').html();  
+           var page = "_inc/exports/excel_export.php?data=" + excel_data;  
+           window.location = page;  
+      });  
+ });  
+ </script> 
