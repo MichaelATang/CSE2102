@@ -14,3 +14,5 @@ Week 2 - Demo for Login/Session Handling
 * **Taxi Route management** https://github.com/kelmorrison/CSE2102project_30_deg_N
 
 * **Printery Inventory System** https://github.com/HariKirtanRasa/CSE2102-Project-GDVInventoryDB
+
+* **Dentistry Monitoing System** https://github.com/Aammbbeerr/Delight_Smiles_cse2102
