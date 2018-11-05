@@ -16,3 +16,7 @@ Week 2 - Demo for Login/Session Handling
 * **Printery Inventory System** https://github.com/HariKirtanRasa/CSE2102-Project-GDVInventoryDB
 
 * **Dentistry Monitoing System** https://github.com/Aammbbeerr/Delight_Smiles_cse2102
+
+* **Traffic Ticket Monitory System** https://github.com/Spartakhan/drivesafely
+
+* **Playschool Registration System** https://github.com/mekabobb/CSE2101---Project
