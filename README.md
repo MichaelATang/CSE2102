@@ -9,14 +9,16 @@ Week 2 - Demo for Login/Session Handling
 
 ## Current Presented Projects
 
-* **Inmate management system** https://github.com/seraph2girl/CSE2102--Sonderlude
+* **Inmate management system (Documenation Reference)** https://github.com/seraph2girl/CSE2102--Sonderlude
 
 * **Taxi Route management** https://github.com/kelmorrison/CSE2102project_30_deg_N
 
-* **Printery Inventory System** https://github.com/HariKirtanRasa/CSE2102-Project-GDVInventoryDB
+* **Printery Inventory System (Repository Layout Reference)** https://github.com/HariKirtanRasa/CSE2102-Project-GDVInventoryDB
 
-* **Dentistry Monitoing System** https://github.com/Aammbbeerr/Delight_Smiles_cse2102
+* **Dentistry Monitoing System (ReadMe Reference)** https://github.com/Aammbbeerr/Delight_Smiles_cse2102
 
 * **Traffic Ticket Monitory System** https://github.com/Spartakhan/drivesafely
 
 * **Playschool Registration System** https://github.com/mekabobb/CSE2101---Project
+
+* **Motor Insurance Application** https://github.com/ReaadKayum/CSE2102---MOTO-INSURE
