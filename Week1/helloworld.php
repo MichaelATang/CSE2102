@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<!--  phpinfo() -->
+<!--  phpinfo(); -->
 
 <?php
 echo "Hello World";
