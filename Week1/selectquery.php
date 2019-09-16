@@ -14,10 +14,10 @@ try {
         }
 
         // try to fix the error below    
-        $data = $conn->query("SELECT count(1) as employees_count FROM employees")->fetchAll();
-        foreach ($data as $row) {
-                echo $row['employees count']."<br />\n";
-        }
+        // $data = $conn->query("SELECT count(1) as employees_count FROM employees")->fetchAll();
+        // foreach ($data as $row) {
+        //        echo $row['employees count']."<br />\n";
+        //}
     
     }
 catch(PDOException $e)
