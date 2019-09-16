@@ -1,19 +1,31 @@
 <?php
 // Start the session
 session_start();
+
+
+    if (isset($_GET['login']))  {
+     
+        // process the login request
+        if (isset($_POST['username'])) $_SESSION["username"] = $_POST['username'];
+        if (isset($_POST['password'])) $_SESSION["password"] = MD5($_POST['password']);
+       
+    }else if(isset($_GET['logout'])) {
+      session_destroy();
+      $message = "You have logged out of the system. Hope to see you again.";
+      print "<meta http-equiv=\"refresh\" content=\"0;URL=?message={$message}\">";
+    }
+
 ?>
 <!DOCTYPE html>
 <html>
 <body>
 
+<a href="?logout=yes">logout</a>
+
 <?php
-// Set session variables
-$_SESSION["username"] = "myusername";
-$_SESSION["password"] = "mypassword";
-echo "Session variables are set.";
 
 
-if (!isset($_SESSION['username']))
+if (isset($_SESSION["username"]))
 {
   echo "Your username is " . $_SESSION["username"];
 }
