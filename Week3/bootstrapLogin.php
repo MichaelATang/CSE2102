@@ -40,7 +40,6 @@ $conn = null;
 <html>
 
 
-
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -51,26 +50,24 @@ $conn = null;
 
   <title>Bootstrap</title>
 
+ 
   <!-- Custom styles for this template -->
   <link href="./assets/signin.css" rel="stylesheet">
 </head>
 
 <body class="text-center">
-
-
-  <div align="center">
-    <img class="mb-4" src="./assets/bootstrap-solid.svg" alt="" width="72" height="72">
-    <h1>Welcome to CSE2102 </h1>
-    <h1 class="h3 mb-3 font-weight-normal">To proceed, please login.</h1>
+    
     <form class="form-signin" action="?login=yes" method="post" enctype="multipart/form-data" name="login" target="_self">
+      <img class="mb-4" src="./assets/bootstrap-solid.svg" alt="" width="72" height="72">
+      <h1>Welcome to CSE2102 </h1>
+      <h1 class="h3 mb-3 font-weight-normal">To proceed, please login.</h1>
+    
       <input name="username" id="username" type="text" class="form-control" placeholder="Username" required autofocus />
       <input name="password" id="password" type="password" class="form-control" placeholder="Password" required />
       <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" value="Login">Sign in</button>
       <p class="mt-5 mb-3 text-muted">&copy; 2019-2020</p>
-    </form>
-  </div>
 
-  <?php
+      <?php
   if (!empty($userid)) {
             // user is authenticated
             if (isset($_POST['username'])) $_SESSION["username"] = $_POST['username'];
@@ -83,10 +80,8 @@ $conn = null;
 
             // bounce to the index file with message
             echo '
-            <div class="row">
             <div class="alert alert-success" role="alert">
-            You have successfully logged in!
-            </div>
+               You have successfully logged in!            
             </div>';
             //print "<meta http-equiv=\"refresh\" content=\"0;URL=?message={$message}\">";
         } else {
@@ -98,8 +93,9 @@ $conn = null;
             //print "<meta http-equiv=\"refresh\" content=\"0;URL=?message={$message}\">";
         }
    
-  ?>
-   
+    ?>
+    </form>
+     
    
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
