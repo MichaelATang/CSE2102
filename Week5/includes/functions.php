@@ -1,31 +1,10 @@
 <?php
-
-require_once("get_db.php");
- 
     function query($query) {
-        global $db;
-
+        require_once("get_sel_db.php");
         $st = $db->query($query);
         $success = $st->fetchAll(PDO::FETCH_ASSOC);
-       
+
+        require_once("close_db.php");
         return $success;
     }
-
-
-    function addNewData($name, $username, $password, $type) {        
-        global $db;
-        $hashed_password = md5($password);
-
-                $result = $db->prepare("INSERT INTO users( name, username, password, type ) 
-                                        VALUES(:name, :username, :password, :type)");
-                
-                $result->execute(array(':name' => $name, ':username' => $username, 
-                                       ':password' => $hashed_password, 'type' => $type));
-
-                $result = $db->lastInsertId();
-                
-                return $result;		
-    }
-
-
 ?>
