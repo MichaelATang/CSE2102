@@ -18,6 +18,7 @@ if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_array($result)) {
         echo "sid: " . $row["dept_no"]. " - Name: " . $row["dept_name"]. " <br>";
+        echo "<hr>";
     }
 } else {
     echo "0 results";
