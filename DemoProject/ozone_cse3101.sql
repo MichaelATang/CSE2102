@@ -10,6 +10,8 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+DROP DATABASE IF EXISTS ozone_cse3101;
+
 CREATE DATABASE IF NOT EXISTS ozone_cse3101;
 
 USE ozone_cse3101;
@@ -286,7 +288,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `type`, `fname`, `lname`, `organisation`, `email`, `street`, `city`, `country`, `phone`, `hashed_password`, `date`) VALUES 
-(2, 'admin', 'Girendra', 'Persaud', 'GxMedia', 'girendra1@gmail.com', '38 Hibiscus Place Blankenburg', 'West Coast Demerara', 'GY', '6261032', '9cbf8a4dcb8e30682b927f352d6559a0', '2016-03-11 11:37:54');
+(2, 'admin', 'Girendra', 'Persaud', 'GxMedia', 'admin@gmail.com', '38 Hibiscus Place Blankenburg', 'West Coast Demerara', 'GY', '6261032', md5('admin'), '2016-03-11 11:37:54');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

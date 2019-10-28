@@ -65,7 +65,7 @@
 	//if (isset($_SESSION['logged_in_user_id'])) echo $_SESSION['logged_in_user_id'];
  	
 	//application alerts
-	include("/_inc/frontPageAlerts.php");
+	include("_inc/frontPageAlerts.php");
   ?>
 	
 	<?php 
