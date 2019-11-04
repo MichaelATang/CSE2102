@@ -38,7 +38,7 @@ if (isset($_GET['add'])) {
     <th scope="col">Last Name</th>
     <th scope="col">eMail/login</th>
     <th scope="col">Type</th>
-    <th scope="col">Action</th>
+    <th scope="col">Actions</th>
   </tr>
   </thead>
   
