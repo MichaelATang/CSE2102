@@ -60,7 +60,8 @@ foreach($results as $row){
       <td><?php echo $row['type'];?></td>
     <td><?php echo $row['street'] . ", " . $row['city'] . ", " . $row['country']; ?></td>
     <td><?php echo $row['phone']; ?></td>
-    <td class="GxNoPrint"><?php if ($_SESSION['logged_in_user_id'] != $row['id']) { ?><a class="btn btn-xs btn-danger glyphicon glyphicon-trash" title="DELETE USER" href="#" onClick="linkRef('?manageusers=yes&del=<?php echo $row['id']; ?>')"></a> | <?php } ?><a class="btn btn-xs btn-info glyphicon glyphicon-pencil" title="Edit User Information" href="?manageusers=yes&edit=<?php echo $row['id']; ?>"></a></td>
+    <td class="GxNoPrint">
+    <?php if ($_SESSION['logged_in_user_id'] != $row['id']) { ?><a class="btn btn-xs btn-danger glyphicon glyphicon-trash" title="DELETE USER" href="#" onClick="linkRef('?manageusers=yes&del=<?php echo $row['id']; ?>')"></a> | <?php } ?><a class="btn btn-xs btn-info glyphicon glyphicon-pencil" title="Edit User Information" href="?manageusers=yes&edit=<?php echo $row['id']; ?>"></a></td>
   </tr>
 <?php        
 }

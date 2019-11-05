@@ -1,16 +1,68 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<?php
+//open session
+if (!session_id()) {
+    session_start();
+}
+include("_inc/functions.php");
+// $settings = getAllSettings();
+?>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>CSE2102 Lab 1-3</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Bootstrap</title>
+
+
+    <!-- Custom styles for this template -->
+    <link href="./assets/signin.css" rel="stylesheet">
+    <link href="./assets/dashboard.css" rel="stylesheet">
 </head>
-<body>
 
-   <?php
+<body class="text-center">
 
-        include("helpers/mainApplicationArea.php");
-        
-   ?>
+    <div class="container-fluid">
+        <?php
+        //debug
+        //if (isset($_SESSION['logged_in_user_id'])) echo $_SESSION['logged_in_user_id'];
+
+        //application alerts
+        include("_inc/frontPageAlerts.php");
+        ?>
+
+        <?php
+        /// check if user is logged in else show signin and signup page
+        if (userLoggedIn())
+            // show application
+            include("_inc/mainApplicationArea.php");
+        //else just show the signin page!
+        else {
+            include("_inc/signin.php");
+            // include ("_inc/downloads.php");
+        }
+        ?>
+    </div> <!-- Container end -->
+
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    <hr />
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 </body>
+
 </html>

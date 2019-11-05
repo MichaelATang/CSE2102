@@ -103,6 +103,24 @@
 		$result->execute(array(':type' => $type, ':fname' => $fname, ':lname' => $lname, ':email' => $email, ':hashed_password' => $password));
 		$result = $mainDB->lastInsertId();
 		return $result;
-	}	
+	}
 	
+	function updateUserWithoutPasswordChange($id, $type, $fname, $lname,  $email) {
+		global $mainDB;
+		$result = $mainDB->prepare("UPDATE users SET type=?, fname=?, lname=?, email=? WHERE id ={$id} LIMIT 1");
+		$result->execute(array($type, $fname, $lname, $email));
+	}
+
+	function updateUserWithPasswordChange($id, $type, $fname, $lname, $email,  $hashed_password) {
+		global $mainDB;
+		$result = $mainDB->prepare("UPDATE users SET type=?, fname=?, lname=?,  email=?,  hashed_password=? WHERE id ={$id} LIMIT 1");
+		$result->execute(array($type, $fname, $lname, $email, $hashed_password));
+	}
+
+	function deleteUser($id) {
+		global $mainDB;
+		$stmt = $mainDB->prepare("DELETE FROM users WHERE id = :id LIMIT 1");
+		$stmt->execute(array(':id' => $id));
+		return 1;
+	}
 ?>
