@@ -1,0 +1,29 @@
+use employees;
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(15) NOT NULL COMMENT 'Type will be admin or ordinary users',
+  `fname` varchar(25) NOT NULL,
+  `lname` varchar(25) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `hashed_password` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+
+insert into users(fname, lname, email, hashed_passwordm type) values ("admin","admin","admin@yahoo.com",md5("admin"), admin);
+
+CREATE TABLE IF NOT EXISTS `user_types` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(30) NOT NULL COMMENT 'User Level Types',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+
+insert into user_types(type) values("admin");
+
+
+CREATE TABLE IF NOT EXISTS `logs` (  
+  `whoid` int(11) NOT NULL,
+  `usertype` varchar(30) NOT NULL COMMENT 'User Level Types',
+  `ip` varchar(40) NOT NULL ,
+  `details` varchar(255) NOT NULL 
+) ;
